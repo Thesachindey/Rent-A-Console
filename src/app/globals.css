@@ -1,7 +1,35 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* 1. Map your variables to Tailwind utility tokens */
+@theme {
+  --color-primary-bg: var(--primary-bg);
+  --color-secondary-bg: var(--secondary-bg);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-accent: var(--accent-color);
 }
 
+/* 2. Define the Light Mode defaults */
+:root {
+  --primary-bg: #ffffff;
+  --secondary-bg: #d6d6de;
+  --text-primary: #181818;
+  --text-secondary: #4b4b4b;
+  --accent-color: #646cff;
+}
+
+/* 3. Override them when the .dark class is active */
+html.dark {
+  --primary-bg: #1a1a1a;
+  --secondary-bg: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+  --accent-color: #646cff;
+}
+
+/* 4. Apply base styles to the body */
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
