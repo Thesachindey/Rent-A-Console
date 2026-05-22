@@ -30,6 +30,20 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            (function() {
+              const savedTheme = localStorage.getItem("isDark");
+              if (savedTheme === "true" || savedTheme === null) {
+                document.documentElement.classList.add("dark");
+              } else {
+                document.documentElement.classList.remove("dark");
+              }
+            })();
+          `,
+        }}
+      />
       {children}
     </ThemeContext.Provider>
   );
