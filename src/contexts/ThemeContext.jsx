@@ -3,9 +3,6 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const ThemeContext = createContext();
 
-export const useTheme = () => {
-  return useContext(ThemeContext);
-};
 
 export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(true);
@@ -47,4 +44,8 @@ export const ThemeProvider = ({ children }) => {
       {children}
     </ThemeContext.Provider>
   );
+};
+
+export const useTheme = () => {
+  return useContext(ThemeContext);
 };
