@@ -223,7 +223,7 @@ const NavBar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 m-2 rounded-2xl bg-white/60 dark:bg-black/60 backdrop-blur-lg border border-gray-200/80 dark:border-gray-800/80 shadow-lg dark:shadow-gray-900/20 relative overflow-hidden transition-transform duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 m-2 rounded-2xl bg-white/60 dark:bg-black/60 backdrop-blur-lg  shadow-lg dark:shadow-gray-900/20 relative overflow-hidden transition-transform duration-300 ${
         showNavbar ? "translate-y-0" : "-translate-y-full"
       }`}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -232,8 +232,8 @@ const NavBar = () => {
           <div className="flex-shrink-0">
             <a href="#" className="flex items-center gap-2">
               <MountainIcon className="h-6 w-6 text-gray-900 dark:text-white" />
-              <span className="text-lg font-semibold text-gray-900 dark:text-white">
-                Acme Inc
+              <span className="text-lg font-semibold  text-primary dark:text-white">
+              RentAConsole
               </span>
             </a>
           </div>
@@ -273,7 +273,7 @@ const NavBar = () => {
 
                     <motion.a
                       href={item.href}
-                      className="flex items-center gap-2 px-4 py-2 relative z-10 bg-transparent text-gray-600 dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors rounded-xl"
+                      className="flex items-center gap-2 px-4 py-2 relative z-10 bg-transparent text-[--color-text-primary] dark:text-gray-300 group-hover:text-gray-900 dark:group-hover:text-white transition-colors rounded-xl"
                       variants={itemVariants}
                       transition={sharedTransition}
                       style={{
